@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import * as firebase from "firebase";
 
 import Header from "./components/Header";
 import CarList from "./components/CarList";
 import MapContainer from "./components/MapContainer";
-
-// var app = firebase.initializeApp({ ... });
 
 const page = {
   display: "flex"

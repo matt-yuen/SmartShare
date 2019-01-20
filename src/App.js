@@ -4,22 +4,21 @@ import Header from "./components/Header";
 import CarList from "./components/CarList";
 import MapContainer from "./components/MapContainer";
 
-const navbarFlex = {
+const page = {
   display: "flex"
 };
 
 const carListContainer = {
   "flex-grow": 1,
   position: "relative",
-  width: "320px"
-};
-
-const carListSize = {
-  width: "320px"
+  width: "325px"
 };
 
 const carListStyle = {
-  "padding-left": "15px"
+  "padding-left": "15px",
+  "overflow-y": "auto",
+  "overflow-x": "hidden",
+  height: "660px"
 };
 
 const mapContainer = {
@@ -28,27 +27,22 @@ const mapContainer = {
 };
 
 const mapSize = {
-  width: "1220px",
-  height: "723px"
+  width: "1215px"
 };
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <div style={navbarFlex}>
-          <div style={carListContainer}>
-            <div style={carListSize}>
-              <Header />
-              <div style={carListStyle}>
-                <CarList />
-              </div>
-            </div>
+      <div style={page}>
+        <div style={carListContainer}>
+          <Header />
+          <div style={carListStyle}>
+            <CarList />
           </div>
-          <div style={mapContainer}>
-            <div style={mapSize}>
-              <MapContainer />
-            </div>
+        </div>
+        <div style={mapContainer}>
+          <div style={mapSize}>
+            <MapContainer />
           </div>
         </div>
       </div>

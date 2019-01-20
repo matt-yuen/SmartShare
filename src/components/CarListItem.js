@@ -8,55 +8,21 @@ const temp = {
 };
 
 class CarListItem extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="ui cards">
         <div className="card" style={temp}>
           <div className="content">
             <img className="right floated mini ui image" src={logo} />
-            <div className="header">Model</div>
-            <div className="meta">Make, Year</div>
-            <div className="description">Extra info</div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="content" style={temp}>
-            <img className="right floated mini ui image" src={logo} />
-            <div className="header">Model</div>
-            <div className="meta">Make, Year</div>
-            <div className="description">Extra info</div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="content" style={temp}>
-            <img className="right floated mini ui image" src={logo} />
-            <div className="header">Model</div>
-            <div className="meta">Make, Year</div>
-            <div className="description">Extra info</div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="content" style={temp}>
-            <img className="right floated mini ui image" src={logo} />
-            <div className="header">Model</div>
-            <div className="meta">Make, Year</div>
-            <div className="description">Extra info</div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="content" style={temp}>
-            <img className="right floated mini ui image" src={logo} />
-            <div className="header">Model</div>
-            <div className="meta">Make, Year</div>
-            <div className="description">Extra info</div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="content" style={temp}>
-            <img className="right floated mini ui image" src={logo} />
-            <div className="header">Model</div>
-            <div className="meta">Make, Year</div>
-            <div className="description">Extra info</div>
+            <div className="header">{this.props.model}</div>
+            <div className="meta">
+              {this.props.make}, {this.props.year}
+            </div>
+            <div className="description">{this.props.extra}</div>
           </div>
         </div>
       </div>

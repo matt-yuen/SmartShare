@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Navbar, NavbarBrand } from "reactstrap";
 
 const logo = require("../images/logo.png");
 

@@ -12,14 +12,7 @@ const heading = {
 class CarList extends Component {
   renderCarList() {
     return this.props.cars.map(car => {
-      return (
-        <CarListItem
-          model={car.model}
-          make={car.make}
-          year={car.year}
-          extra={car.extra}
-        />
-      );
+      return <CarListItem model={car.model} make={car.make} year={car.year} />;
     });
   }
 

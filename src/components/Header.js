@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-const logo = require("../images/logo.png");
+const logo = require("../images/wheel.png");
 
 const styleBrand = {
   color: "white",
@@ -12,8 +12,8 @@ const styleBrand = {
 
 const styleLogo = {
   height: "40px",
-  "padding-left": "10px",
-  "padding-top": "5px"
+  "padding-left": "5px"
+  // "padding-top": "5px"
 };
 
 class Header extends Component {

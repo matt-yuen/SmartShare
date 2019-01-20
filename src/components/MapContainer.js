@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-// import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
-import { Map, GoogleApiWrapper } from "google-maps-react";
+import { Map, InfoWindow, Marker, GoogleApiWrapper } from "google-maps-react";
+
+const pos = { lat: 43.6596426, lng: -79.3998563 };
 
 export class MapContainer extends Component {
   render() {
@@ -12,7 +13,10 @@ export class MapContainer extends Component {
           lat: 43.6596426,
           lng: -79.3998563
         }}
-      />
+      >
+        {/* Hardcode Markers!!! */}
+        <Marker position={pos} />
+      </Map>
     );
   }
 }

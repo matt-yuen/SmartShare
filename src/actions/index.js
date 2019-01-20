@@ -14,7 +14,9 @@ export const fetchCars = () => {
       model: "Odyssey",
       make: "Honda",
       year: "2000",
-      extra: "Test extra"
+      extra: "Test extra",
+      lat: "43.6596426",
+      lng: "-79.3998563"
     }
   };
 };

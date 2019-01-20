@@ -34,17 +34,22 @@ const wrapTime = {
   paddingBottom: "10px"
 };
 
+const cancelButton = <button className="ui button">Cancel</button>;
+
 class CarListItem extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      modalIsOpen: false
+      modalIsOpen: false,
+      booked: false
     };
 
     this.openModal = this.openModal.bind(this);
     this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   openModal() {
@@ -60,7 +65,15 @@ class CarListItem extends Component {
     this.setState({ modalIsOpen: false });
   }
 
-  handleBook() {}
+  onSubmit(e) {
+    e.preventDefault();
+    this.closeModal();
+    this.setState({ booked: true });
+  }
+
+  handleCancel() {
+    this.setState({ booked: false });
+  }
 
   render() {
     return (
@@ -76,6 +89,9 @@ class CarListItem extends Component {
               <button className="ui button" onClick={this.openModal}>
                 Book
               </button>
+              <span onClick={this.handleCancel}>
+                {this.state.booked ? cancelButton : null}
+              </span>
             </div>
           </div>
         </div>
@@ -92,18 +108,18 @@ class CarListItem extends Component {
           <div>
             Please indicate the time period that you would like to book the car
           </div>
-          <form>
+          <form onSubmit={this.onSubmit}>
             <div style={wrapTime}>
               <label style={startTimeStyle}>Start Time</label>
-              <Input />
+              <Input placeholder="dd/mm/yyyy" />
+              <Input placeholder="hh:mm" />
               <br />
               <label style={endTimeStyle}>End Time</label>
-              <Input />
+              <Input placeholder="dd/mm/yyyy" />
+              <Input placeholder="hh:mm" />
               <br />
             </div>
-            <button className="ui button" onClick={this.handleBook}>
-              Book
-            </button>
+            <button className="ui button">Book</button>
             <button className="ui button" onClick={this.closeModal}>
               Close
             </button>

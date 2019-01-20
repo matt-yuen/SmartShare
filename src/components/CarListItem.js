@@ -42,7 +42,11 @@ class CarListItem extends Component {
 
     this.state = {
       modalIsOpen: false,
-      booked: false
+      booked: false,
+      startDay: "",
+      startTime: "",
+      endDay: "",
+      endTime: ""
     };
 
     this.openModal = this.openModal.bind(this);
@@ -50,6 +54,8 @@ class CarListItem extends Component {
     this.closeModal = this.closeModal.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
     this.handleCancel = this.handleCancel.bind(this);
+    this.startDayChange = this.startDayChange.bind(this);
+    this.endDayChange = this.endDayChange.bind(this);
   }
 
   openModal() {
@@ -72,7 +78,21 @@ class CarListItem extends Component {
   }
 
   handleCancel() {
-    this.setState({ booked: false });
+    this.setState({
+      booked: false,
+      startDay: "",
+      startTime: "",
+      endDay: "",
+      endTime: ""
+    });
+  }
+
+  startDayChange(e) {
+    this.setState({ startDay: e.target.value });
+  }
+
+  endDayChange(e) {
+    this.setState({ endDay: e.target.value });
   }
 
   render() {
@@ -86,6 +106,10 @@ class CarListItem extends Component {
               {this.props.make}, {this.props.year}
             </div>
             <div className="description">
+              {this.state.booked ? "You booked this car from " : null}
+              {this.state.booked ? this.state.startDay : null}
+              {this.state.booked ? " to " : null}
+              {this.state.booked ? this.state.endDay : null}
               <button className="ui button" onClick={this.openModal}>
                 Book
               </button>
@@ -111,11 +135,15 @@ class CarListItem extends Component {
           <form onSubmit={this.onSubmit}>
             <div style={wrapTime}>
               <label style={startTimeStyle}>Start Time</label>
-              <Input placeholder="dd/mm/yyyy" />
+              <Input
+                onChange={this.startDayChange}
+                placeholder="dd/mm/yyyy"
+                value={this.startDay}
+              />
               <Input placeholder="hh:mm" />
               <br />
               <label style={endTimeStyle}>End Time</label>
-              <Input placeholder="dd/mm/yyyy" />
+              <Input onChange={this.endDayChange} placeholder="dd/mm/yyyy" />
               <Input placeholder="hh:mm" />
               <br />
             </div>

@@ -11,36 +11,38 @@ const navbarFlex = {
 const carListContainer = {
   "flex-grow": 1,
   position: "relative",
-  top: "10px",
-  left: "10px",
-  width: "300px"
+  width: "320px"
 };
 
 const carListSize = {
-  width: "265px"
+  width: "320px"
+};
+
+const carListStyle = {
+  "padding-left": "15px"
 };
 
 const mapContainer = {
   "flex-grow": 2,
-  position: "relative",
-  top: "10px",
-  right: "10px"
+  position: "relative"
 };
 
 const mapSize = {
-  width: "1240px",
-  height: "635px"
+  width: "1220px",
+  height: "723px"
 };
 
 class App extends Component {
   render() {
     return (
       <div>
-        <Header />
         <div style={navbarFlex}>
           <div style={carListContainer}>
             <div style={carListSize}>
-              <CarList />
+              <Header />
+              <div style={carListStyle}>
+                <CarList />
+              </div>
             </div>
           </div>
           <div style={mapContainer}>

@@ -4,7 +4,11 @@ import { Navbar, NavbarBrand } from "reactstrap";
 const logo = require("../images/logo.png");
 
 const styleBrand = {
-  color: "white"
+  color: "white",
+  "background-color": "black",
+  display: "flex",
+  "justify-content": "flex-start",
+  padding: "10px 0 5px 10px"
 };
 
 const styleLogo = {
@@ -13,21 +17,12 @@ const styleLogo = {
   "padding-top": "5px"
 };
 
-const navbarFlex = {
-  display: "flex",
-  "justify-content": "flex-start"
-};
-
 class Header extends Component {
   render() {
     return (
-      <div>
-        <Navbar color="dark" light expand="md">
-          <div style={navbarFlex}>
-            <h1 style={styleBrand}>SmartShare</h1>
-            <img src={logo} style={styleLogo} alt="Logo" />
-          </div>
-        </Navbar>
+      <div style={styleBrand}>
+        <h1>SmartShare</h1>
+        <img src={logo} style={styleLogo} alt="Logo" />
       </div>
     );
   }

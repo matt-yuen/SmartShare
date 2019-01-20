@@ -19,6 +19,30 @@ class CarListItem extends Component {
             <div className="description">Extra info</div>
           </div>
         </div>
+        <div className="card">
+          <div className="content">
+            <img className="right floated mini ui image" src={logo} />
+            <div className="header">Model</div>
+            <div className="meta">Make, Year</div>
+            <div className="description">Extra info</div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="content">
+            <img className="right floated mini ui image" src={logo} />
+            <div className="header">Model</div>
+            <div className="meta">Make, Year</div>
+            <div className="description">Extra info</div>
+          </div>
+        </div>
+        <div className="card">
+          <div className="content">
+            <img className="right floated mini ui image" src={logo} />
+            <div className="header">Model</div>
+            <div className="meta">Make, Year</div>
+            <div className="description">Extra info</div>
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,6 +1,18 @@
 import React, { Component } from "react";
 import Modal from "react-modal";
 import { Input } from "semantic-ui-react";
+import * as firebase from "firebase";
+
+var app = firebase.initializeApp({
+  apiKey: "AIzaSyDg0ZjuvjlJK8X4Mr7BR6JxzJIg4RNYqEc",
+  authDomain: "smartshare-db7de.firebaseapp.com",
+  databaseURL: "https://smartshare-db7de.firebaseio.com",
+  projectId: "smartshare-db7de",
+  storageBucket: "smartshare-db7de.appspot.com",
+  messagingSenderId: "521172786419"
+});
+
+var db = firebase.database();
 
 Modal.setAppElement(document.getElementById("root"));
 
@@ -36,6 +48,8 @@ const wrapTime = {
 
 const cancelButton = <button className="ui button">Cancel</button>;
 
+const bookButton = <button className="ui button">Book</button>;
+
 class CarListItem extends Component {
   constructor(props) {
     super(props);
@@ -56,6 +70,14 @@ class CarListItem extends Component {
     this.handleCancel = this.handleCancel.bind(this);
     this.startDayChange = this.startDayChange.bind(this);
     this.endDayChange = this.endDayChange.bind(this);
+  }
+
+  componentDidMount() {
+    db.ref("/mattyuen")
+      .once("value")
+      .then(snapshot => {
+        console.log(snapshot.val());
+      });
   }
 
   openModal() {
@@ -110,9 +132,14 @@ class CarListItem extends Component {
               {this.state.booked ? this.state.startDay : null}
               {this.state.booked ? " to " : null}
               {this.state.booked ? this.state.endDay : null}
-              <button className="ui button" onClick={this.openModal}>
-                Book
-              </button>
+              {this.state.booked ? <br /> : null}
+              {this.state.booked
+                ? "Text 'CODE' to 1-226-286-4315 to unlock the car during this time"
+                : null}
+              {this.state.booked ? <br /> : null}
+              <span onClick={this.openModal}>
+                {!this.state.booked ? bookButton : null}
+              </span>
               <span onClick={this.handleCancel}>
                 {this.state.booked ? cancelButton : null}
               </span>

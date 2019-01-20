@@ -122,11 +122,11 @@ class CarListItem extends Component {
       <div className="ui cards">
         <div className="card" style={grey}>
           <div className="content">
-            <img className="right floated mini ui image" src={logo} />
-            <div className="header">{this.props.model}</div>
-            <div className="meta">
-              {this.props.make}, {this.props.year}
+            {/* <img className="right floated mini ui image" src={logo} /> */}
+            <div className="header">
+              {this.props.make} {this.props.model}
             </div>
+            <div className="meta">{this.props.year}</div>
             <div className="description">
               {this.state.booked ? "You booked this car from " : null}
               {this.state.booked ? this.state.startDay : null}
@@ -134,7 +134,7 @@ class CarListItem extends Component {
               {this.state.booked ? this.state.endDay : null}
               {this.state.booked ? <br /> : null}
               {this.state.booked
-                ? "Text 'CODE' to 1-226-286-4315 to unlock the car during this time"
+                ? "Text 'UNLOCK' to 1-226-286-4315 to unlock the car during this time"
                 : null}
               {this.state.booked ? <br /> : null}
               <span onClick={this.openModal}>

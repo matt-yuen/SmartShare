@@ -13,7 +13,6 @@ const styleBrand = {
 const styleLogo = {
   height: "40px",
   "padding-left": "5px"
-  // "padding-top": "5px"
 };
 
 class Header extends Component {

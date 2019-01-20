@@ -23,7 +23,7 @@ export const fetchCars = () => async dispatch => {
     .then(snapshot => {
       let i;
 
-      for (i = 0; i < 4; i++) {
+      for (i = 0; i < 5; i++) {
         array[i] = snapshot.val()[i];
       }
     });

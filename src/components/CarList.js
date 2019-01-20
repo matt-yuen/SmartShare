@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 
 import CarListItem from "./CarListItem";
 
@@ -20,4 +21,4 @@ class CarList extends Component {
   }
 }
 
-export default CarList;
+export default connect()(CarList);

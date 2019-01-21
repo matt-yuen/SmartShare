@@ -1,0 +1,63 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "smartshare",
+      "intents": [
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "confirmCar",
+          "slots": [
+            {
+              "name": "number",
+              "type": "AMAZON.NUMBER"
+            }
+          ],
+          "samples": ["choose Car ID {number}"]
+        },
+        {
+          "name": "begin",
+          "slots": [],
+          "samples": ["show cars", "what cars are nearby", "Get nearby cars."]
+        },
+        {
+          "name": "AMAZON.PauseIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.ResumeIntent",
+          "samples": []
+        },
+        {
+          "name": "repeat",
+          "slots": [],
+          "samples": [
+            "repeat",
+            "Repeat.",
+            "Repeat cars.",
+            "Please repeat the list of cars."
+          ]
+        }
+      ],
+      "types": []
+    }
+  }
+}
